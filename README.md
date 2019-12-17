@@ -16,4 +16,4 @@
     paint.setColor(Color.BLUE);
     canvas.drawCircle(100,100,50,paint);
 ```
-![圆形](image/Circle.png)
+![](image/Circle.png)
