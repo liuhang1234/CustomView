@@ -17,3 +17,9 @@
     canvas.drawCircle(100,100,50,paint);
 ```
 ![圆形图片](image/Circle.jpg)
+
+### React
+```
+    左上右下画笔 
+    drawRect(float left, float top, float right, float bottom, Paint paint) 画矩形
+```
