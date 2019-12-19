@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="image_size">尺寸：%1$d x %2$d</string>
 </resources>

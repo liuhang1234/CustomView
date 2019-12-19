@@ -4,15 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#cccccc"
     tools:context=".MainActivity">
 
 
 
 
 
-    <com.lh.myapplication.Circle
+    <com.lh.myapplication.Sample07AfterDrawView
+        android:src="@drawable/batman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-
+    <com.lh.myapplication.Sample08BeforeDrawView
+        android:hint="111111"
+        android:background="#66BB6A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
