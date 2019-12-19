@@ -23,3 +23,22 @@
     左上右下画笔 
     drawRect(float left, float top, float right, float bottom, Paint paint) 画矩形
 ```
+
+### 速度差值器
+```
+     interpolators[0] = new AccelerateDecelerateInterpolator();
+        interpolators[1] = new LinearInterpolator();
+        interpolators[2] = new AccelerateInterpolator();
+        interpolators[3] = new DecelerateInterpolator();
+        interpolators[4] = new AnticipateInterpolator();
+        interpolators[5] = new OvershootInterpolator();
+        interpolators[6] = new AnticipateOvershootInterpolator();
+        interpolators[7] = new BounceInterpolator();
+        interpolators[8] = new CycleInterpolator(0.5f);
+        interpolators[9] = PathInterpolatorCompat.create(interpolatorPath);
+        interpolators[10] = new FastOutLinearInInterpolator();
+        interpolators[11] = new FastOutSlowInInterpolator();
+        interpolators[12] = new LinearOutSlowInInterpolator();
+
+
+```

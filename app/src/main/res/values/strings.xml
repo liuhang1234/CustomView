@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="image_size">尺寸：%1$d x %2$d</string>
+    <string name="ms_with_value">%dms</string>
 </resources>

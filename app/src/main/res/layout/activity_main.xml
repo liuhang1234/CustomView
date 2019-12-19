@@ -11,6 +11,8 @@
 
 
 
+
+
     <com.lh.myapplication.Sample07AfterDrawView
         android:src="@drawable/batman"
         android:layout_width="wrap_content"
