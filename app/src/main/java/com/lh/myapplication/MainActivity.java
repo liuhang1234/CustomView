@@ -1,10 +1,17 @@
 package com.lh.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.StateSet;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
@@ -27,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView topImageview;
     private int height;// 实时变化的高度
     private View viewtiao;
+    private Activity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         getHeighOfTopView();
         initRecyclerView();
+        mActivity = this;
 
         myNestScrollView.setmOnScrollViewListenner(new MyNestedScrollView.OnScrollViewListenner() {
             @Override
@@ -46,8 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (t <= 0) {//没有往下滑
                     StatusBarUtil.StatusBarDarkMode(MainActivity.this, 3);
                     //设置标题隐藏
-                    view_white.setVisibility(View.GONE);
-                    relatv_change.setVisibility(View.GONE);
+//                    view_white.setVisibility(View.GONE);
+//                    relatv_change.setVisibility(View.GONE);
                     //设置标题所在背景为透明
                     relatv_change.setBackgroundColor(Color.argb(0, 0, 0, 0));
                     viewtiao.setBackgroundColor(Color.argb(0, 0, 0, 0));
@@ -68,8 +77,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //设置标题布局颜色
                     relatv_change.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
                     viewtiao.setBackgroundColor(Color.argb((int) alpha, 255, 255, 255));
+
+                    if (scale<0.5) {
+
+                        imageback.setAlpha(1- 2 * scale);
+//                        imageback.setImageResource(R.drawable.back);
+                        ColorStateList colorStateList = ColorStateList.valueOf(Color.parseColor("#FF0000"));
+
+
+                        imageback.setImageTintList(colorStateList);
+                    } else {
+                        imageback.setAlpha(2 * (scale - 0.5f));
+                        ColorStateList colorStateList = ColorStateList.valueOf(Color.parseColor("#0000FF"));
+
+//                        imageback.setImageResource(R.drawable.back2);
+                        imageback.setImageTintList(colorStateList);
+
+                    }
                 } else {
-                    relatv_change.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
                     tvColorChange.setTextColor(getResources().getColor(R.color.colorPrimary));
                     viewtiao.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                 }

@@ -102,7 +102,7 @@ public class Sample01ArgbEvaluatorLayout extends RelativeLayout {
             // 计算当前动画完成度（fraction）所对应的透明度
             int alpha = startValue >> 24 + (int) ((endValue >> 24 - startValue >> 24) * fraction);
 
-            // 把 HSV 转换回 ARGB 返回
+            // 把 HSV 转换回 ARGB back
             return Color.HSVToColor(alpha, outHsv);
         }
     }
